@@ -1,0 +1,16 @@
+version: '3.7'
+
+services: 
+  db:
+    image: mysql:latest
+    container_name: mysql-disscuss-forum
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=disscuss-forum
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
