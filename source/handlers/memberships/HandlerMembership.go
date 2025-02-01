@@ -15,6 +15,6 @@ func Newhandler(api *gin.Engine) *Handler {
 }
 
 func (h *Handler) RegisterRoute() {
-	route := h.Group("memberships")
+	route := h.Group("membership")
 	route.GET("/ping", h.Ping)
 }
