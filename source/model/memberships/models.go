@@ -5,7 +5,7 @@ import "time"
 type (
 	SignUpRequest struct {
 		Email       string `json:"email"`
-		Username    string `json:"sername"`
+		Username    string `json:"username"`
 		Password    string `json:"password"`
 		PhoneNumber string `json:"phone_number"`
 	}
