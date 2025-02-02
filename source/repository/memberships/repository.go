@@ -13,7 +13,7 @@ type repository struct {
 func NewRepository(db *sql.DB) *repository {
 	rows, err := db.Query("SELECT id, email FROM users")
 	if err != nil {
-		log.Println("error query", err)
+		log.Println("error query:", err)
 	}
 	defer rows.Close()
 
