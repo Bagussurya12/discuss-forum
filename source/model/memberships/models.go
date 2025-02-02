@@ -16,6 +16,7 @@ type (
 		ID          int64     `db:"id"`
 		Email       string    `db:"email"`
 		Password    string    `db:"password"`
+		Username    string    `db:"username"`
 		CreatedAt   time.Time `db:"created_at"`
 		UpdatedAt   time.Time `db:"updated_at"`
 		CreatedBy   string    `db:"created_by"`
