@@ -7,6 +7,7 @@ import (
 	"github.com/Bagussurya12/discuss-forum/source/configs"
 	"github.com/Bagussurya12/discuss-forum/source/handlers/memberships"
 	membershipRepo "github.com/Bagussurya12/discuss-forum/source/repository/memberships"
+	membershipSvc "github.com/Bagussurya12/discuss-forum/source/service/memberships"
 	"github.com/gin-gonic/gin"
 )
 
@@ -38,9 +39,10 @@ func main() {
 		log.Fatal("Failed Initialitation Database: ", err)
 	}
 
-	_ = membershipRepo.NewRepository(db)
+	membershipRepo := membershipRepo.NewRepository(db)
+	membershipService := membershipSvc.NewService(membershipRepo)
 
-	membershipHandler := memberships.Newhandler(r)
+	membershipHandler := memberships.Newhandler(r, membershipService)
 	membershipHandler.RegisterRoute()
 	r.Run(cfg.Service.Port)
 }

@@ -8,7 +8,7 @@ import (
 )
 
 func (r *repository) GetUser(ctx context.Context, email, username, phone_number string) (*memberships.UserModel, error) {
-	q := `SELECT id, email, password, phone_number, username, created_at, updated_at, created_by, updated_by FROM users WHERE email = $1 OR username = $2`
+	q := `SELECT id, email, password, username, phone_number, created_at, updated_at, created_by, updated_by FROM users WHERE email = ? OR username = ?`
 
 	row := r.db.QueryRowContext(ctx, q, email, username)
 
@@ -27,7 +27,7 @@ func (r *repository) GetUser(ctx context.Context, email, username, phone_number 
 }
 
 func (r *repository) CreateUser(ctx context.Context, model memberships.UserModel) error {
-	q := `INSERT INTO users (email, password, username, phone_number, created_at, updated_at, created_by, updated_by) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
+	q := `INSERT INTO users (email, password, username, phone_number, created_at, updated_at, created_by, updated_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
 
 	_, err := r.db.ExecContext(ctx, q, model.Email, model.Password, model.Username, model.PhoneNumber, model.CreatedAt, model.UpdatedAt, model.CreatedBy, model.UpdatedBy)
 
