@@ -28,4 +28,5 @@ func (h *Handler) RegisterRoute() {
 	route := h.Group("memberships")
 	route.GET("/ping", h.Ping)
 	route.POST("/sign-up", h.SignUp)
+	route.POST("/login", h.Login)
 }
