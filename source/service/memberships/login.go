@@ -20,13 +20,13 @@ func (s *service) Login(ctx context.Context, req memberships.LoginRequest) (stri
 	}
 
 	if user == nil {
-		return "", errors.New("Email Not Exist")
+		return "", errors.New("email not exist")
 	}
 
 	err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password))
 
 	if err != nil {
-		return "", errors.New("Email Or Password Invalid")
+		return "", errors.New("email or password invalid")
 	}
 
 	token, err := jwt.CreateToken(user.ID, user.Username, s.cfg.Service.SecretJWT)
