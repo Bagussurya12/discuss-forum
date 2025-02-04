@@ -1,5 +1,6 @@
 service:
   port: ":8000"
+  secretJWT : "discuss-forum"
 
 database:
   dataSourceName: "root:password@tcp(localhost:3307)/disscuss-forum?parseTime=true"

@@ -3,6 +3,7 @@ package memberships
 import (
 	"context"
 
+	"github.com/Bagussurya12/discuss-forum/source/configs"
 	"github.com/Bagussurya12/discuss-forum/source/model/memberships"
 )
 
@@ -12,11 +13,13 @@ type membershipRepository interface {
 }
 
 type service struct {
+	cfg            *configs.Config
 	membershipRepo membershipRepository
 }
 
-func NewService(membershipRepo membershipRepository) *service {
+func NewService(cfg *configs.Config, membershipRepo membershipRepository) *service {
 	return &service{
+		cfg:            cfg,
 		membershipRepo: membershipRepo,
 	}
 }
