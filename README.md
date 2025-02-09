@@ -7,13 +7,24 @@ Discuss Forum is a backend project built using **Go (Golang)**, designed to prov
 ## 🚀 Tech Stack
 
 The project utilizes the following technologies:
-<br>
-<a href="https://gin-gonic.com/"><img align="left" width="128px" src="https://avatars.githubusercontent.com/u/7894478?v=4"/></a>
-<a href="https://docker.com/"><img align="left" width="128px" src="https://www.docker.com/app/uploads/2023/08/logo-guide-logos-1.svg"/></a>
-<a href="https://mysql.com/"><img align="left" width="128px" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/MySQL_logo.svg/1200px-MySQL_logo.svg.png"/></a>
-<a href="https://postman.com/"><img align="left" width="128px" src="https://voyager.postman.com/logo/postman-logo-icon-orange.svg"/></a>
----
 
+<div style="display: flex; align-items: center; gap: 20px;">
+  <a href="https://gin-gonic.com/">
+    <img width="100px" src="https://avatars.githubusercontent.com/u/7894478?v=4" alt="Gin Gonic"/>
+  </a>
+  <a href="https://docker.com/">
+    <img width="120px" src="https://www.docker.com/app/uploads/2023/08/logo-guide-logos-1.svg" alt="Docker"/>
+  </a>
+  <a href="https://mysql.com/">
+    <img width="100px" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/MySQL_logo.svg/1200px-MySQL_logo.svg.png" alt="MySQL"/>
+  </a>
+  <a href="https://postman.com/">
+    <img width="100px" src="https://voyager.postman.com/logo/postman-logo-icon-orange.svg" alt="Postman"/>
+  </a>
+</div>
+
+---
+<br>
 ## 📌 Features
 
 - 🏗 Built with Golang for high performance
