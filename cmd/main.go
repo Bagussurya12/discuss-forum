@@ -42,6 +42,9 @@ func main() {
 		log.Fatal("Failed Initialitation Database: ", err)
 	}
 
+	r.Use(gin.Logger())
+	r.Use(gin.Recovery())
+
 	membershipRepo := membershipRepo.NewRepository(db)
 	postRepo := postRepo.NewRepository(db)
 	membershipService := membershipSvc.NewService(cfg, membershipRepo)
