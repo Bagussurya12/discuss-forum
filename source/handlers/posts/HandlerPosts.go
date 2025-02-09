@@ -29,5 +29,5 @@ func (h *Handler) RegisterRoute() {
 	route := h.Group("posts")
 	route.Use(middleware.AuthMiddeware())
 
-	route.POST("/create-post")
+	route.POST("/create-post", h.CreatePost)
 }
