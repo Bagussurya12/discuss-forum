@@ -8,11 +8,11 @@ import (
 )
 
 func (r *repository) CreatePost(ctx context.Context, model posts.PostModel) error {
-	q := `INSERT INTO posts (usere_id, post_title, post_content, post_hastags, created_at, updated_at, created_by, updated_by) 
+	q := `INSERT INTO posts (user_id, post_title, post_content, post_hastags, created_at, updated_at, created_by, updated_by) 
 	VALUES 
 	(?,?,?,?,?,?,?,?)
 	`
-	_, err := r.db.ExecContext(ctx, q, model.UserID, model.UserID, model.PostTitle, model.PostContent, model.PostHashtags, model.CreatedAt, model.UpdatedAt, model.CreatedBy, model.UpdatedBy)
+	_, err := r.db.ExecContext(ctx, q, model.UserID, model.PostTitle, model.PostContent, model.PostHashtags, model.CreatedAt, model.UpdatedAt, model.CreatedBy, model.UpdatedBy)
 
 	if err != nil {
 		log.Fatal("Something When Wrong", err)
