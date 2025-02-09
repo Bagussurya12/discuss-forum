@@ -8,7 +8,7 @@ Discuss Forum is a backend project built using **Go (Golang)**, designed to prov
 
 The project utilizes the following technologies:
 
-![Golang](https://upload.wikimedia.org/wikipedia/commons/2/2d/Go_gopher_logo.svg)  
+![Golang](https://avatars.githubusercontent.com/u/7894478?v=4)  
 ![Docker](https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png)  
 ![MySQL](https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/MySQL_logo.svg/1200px-MySQL_logo.svg.png)  
 ![Postman](https://www.postman.com/_ar-assets/images/favicon-1-32x32.png)  
