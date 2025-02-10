@@ -21,12 +21,12 @@ func (h *Handler) CreateComment(c *gin.Context) {
 		return
 	}
 
-	postIDStr := c.Param("/postID")
+	postIDStr := c.Param("postID")
 	postID, err := strconv.ParseInt(postIDStr, 10, 64)
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error": errors.New("post id is not valid"),
+			"error": errors.New("post id is not valid").Error(),
 		})
 		return
 	}
