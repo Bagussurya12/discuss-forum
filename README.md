@@ -8,7 +8,7 @@ Discuss Forum is a backend project built using **Go (Golang)**, designed to prov
 
 The project utilizes the following technologies:
 
-<div style="display: flex; align-items: center; gap: 40px;">
+<div style="display: flex; align-items: center; gap: 60px;">
   <a href="https://gin-gonic.com/">
     <img width="100px" src="https://avatars.githubusercontent.com/u/7894478?v=4" alt="Gin Gonic"/>
   </a>
@@ -17,9 +17,6 @@ The project utilizes the following technologies:
   </a>
   <a href="https://mysql.com/">
     <img width="100px" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/MySQL_logo.svg/1200px-MySQL_logo.svg.png" alt="MySQL"/>
-  </a>
-  <a href="https://postman.com/">
-    <img width="100px" src="https://voyager.postman.com/logo/postman-logo-icon-orange.svg" alt="Postman"/>
   </a>
 </div>
 
