@@ -25,3 +25,14 @@ func (r *repository) GetUserActivity(ctx context.Context, model posts.UserActivi
 
 	return &res, nil
 }
+
+func (r *repository) CreateUserActivity(ctx context.Context, model posts.UserActivityModel) error {
+	query := `INSERT INTO user_activities (post_id, user_id, is_liked, created_at, updated_at, created_by, updated_by) VALUES (?,?,?,?,?,?,?)`
+
+	_, err := r.db.ExecContext(ctx, query, model.ID, model.PostID, model.UserID, model.IsLiked, model.CreatedAt, model.UpdatedAt, model.CreatedBy, model.UpdatedBy)
+
+	if err != nil {
+		return err
+	}
+	return nil
+}
