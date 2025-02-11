@@ -36,3 +36,15 @@ func (r *repository) CreateUserActivity(ctx context.Context, model posts.UserAct
 	}
 	return nil
 }
+
+func (r *repository) UpdateUserActivity(ctx context.Context, model posts.UserActivityModel) error {
+	query := `UPDATE user_activities SET is_liked =? , updated_at = ? , updated_by = ? WHERE post_id = ? AND user_id = ?`
+
+	_, err := r.db.ExecContext(ctx, query, model.IsLiked, model.UpdatedAt, model.UpdatedBy, model.PostID, model.PostID)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
