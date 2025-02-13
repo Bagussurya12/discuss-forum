@@ -13,6 +13,7 @@ type postService interface {
 	CreateComment(ctx context.Context, postID, userID int64, request posts.CreateCommentRequest) error
 	UserActivity(ctx context.Context, postID, userID int64, request posts.UserActivityRequest) error
 	GetAllPost(ctx context.Context, pageSize, pageIndex int) (posts.GetAllPostResponse, error)
+	GetPostById(ctx context.Context, postId int64) (*posts.GetPostResponse, error)
 }
 
 type Handler struct {
