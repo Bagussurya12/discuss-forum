@@ -15,6 +15,9 @@ type postRepository interface {
 	UpdateUserActivity(ctx context.Context, model posts.UserActivityModel) error
 
 	GetAllPost(ctx context.Context, limit, offset int) (posts.GetAllPostResponse, error)
+	GetPostById(ctx context.Context, id int64) (*posts.Post, error)
+	CountLikePostId(ctx context.Context, postID int64) (int, error)
+	GetCommentByPostId(ctx context.Context, postID int64) ([]posts.Comment, error)
 }
 
 type service struct {
