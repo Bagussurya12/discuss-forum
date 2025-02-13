@@ -37,4 +37,5 @@ func (h *Handler) RegisterRoute() {
 	route.POST("/create-comment/:postID", h.CreateComment)
 	route.PUT("/user-activity/:postID", h.UpsertUserActivity)
 	route.GET("/", h.GetAllPost)
+	route.GET("/:postID", h.GetPostById)
 }
