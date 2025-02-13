@@ -50,7 +50,7 @@ func (r *repository) UpdateUserActivity(ctx context.Context, model posts.UserAct
 }
 
 func (r *repository) CountLikePostId(ctx context.Context, postID int64) (int, error) {
-	query := `SELECT COUNT(id) WHERE post_id = ? AND is_liked = true ?`
+	query := `SELECT COUNT(id) FROM users_activities WHERE post_id = ? AND is_liked = true ?`
 
 	var response int
 
