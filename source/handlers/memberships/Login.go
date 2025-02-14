@@ -30,7 +30,7 @@ func (h *Handler) Login(c *gin.Context) {
 
 	response := memberships.LoginResponse{
 		AccessToken:  accessToken,
-		RefreshTokem: refreshToken,
+		RefreshToken: refreshToken,
 	}
 
 	c.JSON(http.StatusOK, response)

@@ -14,7 +14,7 @@ import (
 
 func (s *service) Login(ctx context.Context, req memberships.LoginRequest) (string, string, error) {
 
-	user, err := s.membershipRepo.GetUser(ctx, req.Email, "", "")
+	user, err := s.membershipRepo.GetUser(ctx, req.Email, "", "", 0)
 
 	if err != nil {
 		log.Error().Err(err).Msg("Failed To Get User")
