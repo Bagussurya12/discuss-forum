@@ -18,7 +18,7 @@ func (s *service) SignUp(ctx context.Context, req memberships.SignUpRequest) err
 	}
 
 	if user != nil {
-		return errors.New("Username OR Email Already Exist")
+		return errors.New("username or email already exist")
 	}
 
 	pass, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
