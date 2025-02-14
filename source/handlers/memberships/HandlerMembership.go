@@ -9,7 +9,7 @@ import (
 
 type membershipService interface {
 	SignUp(ctx context.Context, req memberships.SignUpRequest) error
-	Login(ctx context.Context, req memberships.LoginRequest) (string, error)
+	Login(ctx context.Context, req memberships.LoginRequest) (string, string, error)
 }
 type Handler struct {
 	*gin.Engine

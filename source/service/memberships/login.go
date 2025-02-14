@@ -50,7 +50,7 @@ func (s *service) Login(ctx context.Context, req memberships.LoginRequest) (stri
 	refreshToken := tokenUtil.GenerateRefreshToken()
 
 	if refreshToken == "" {
-		return token, "", errors.New("Failed Generate Refresh Token")
+		return token, "", errors.New("failed generate refresh token")
 	}
 
 	err = s.membershipRepo.InsertRefreshToken(ctx, memberships.RefreshTokenModel{

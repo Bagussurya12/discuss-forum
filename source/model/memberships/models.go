@@ -18,7 +18,8 @@ type (
 
 type (
 	LoginResponse struct {
-		AccessToken string `json:"accessToken"`
+		AccessToken  string `json:"accessToken"`
+		RefreshTokem string `json:"refreshToken"`
 	}
 )
 
