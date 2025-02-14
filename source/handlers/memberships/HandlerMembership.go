@@ -3,13 +3,15 @@ package memberships
 import (
 	"context"
 
+	"github.com/Bagussurya12/discuss-forum/source/middleware"
 	"github.com/Bagussurya12/discuss-forum/source/model/memberships"
 	"github.com/gin-gonic/gin"
 )
 
 type membershipService interface {
 	SignUp(ctx context.Context, req memberships.SignUpRequest) error
-	Login(ctx context.Context, req memberships.LoginRequest) (string, error)
+	Login(ctx context.Context, req memberships.LoginRequest) (string, string, error)
+	ValidateRefreshToken(ctx context.Context, userID int64, request memberships.RefreshTokenRequest) (string, error)
 }
 type Handler struct {
 	*gin.Engine
@@ -29,4 +31,8 @@ func (h *Handler) RegisterRoute() {
 	route.GET("/ping", h.Ping)
 	route.POST("/sign-up", h.SignUp)
 	route.POST("/login", h.Login)
+
+	routeRefresh := h.Group("memberships")
+	routeRefresh.Use(middleware.AuthRefreshMiddeware())
+	route.POST("/refresh", h.Refresh)
 }
