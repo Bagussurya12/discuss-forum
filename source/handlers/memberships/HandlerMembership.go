@@ -3,6 +3,7 @@ package memberships
 import (
 	"context"
 
+	"github.com/Bagussurya12/discuss-forum/source/middleware"
 	"github.com/Bagussurya12/discuss-forum/source/model/memberships"
 	"github.com/gin-gonic/gin"
 )
@@ -30,4 +31,8 @@ func (h *Handler) RegisterRoute() {
 	route.GET("/ping", h.Ping)
 	route.POST("/sign-up", h.SignUp)
 	route.POST("/login", h.Login)
+
+	routeRefresh := h.Group("memberships")
+	routeRefresh.Use(middleware.AuthRefreshMiddeware())
+	route.POST("/refresh", h.Refresh)
 }
