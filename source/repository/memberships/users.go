@@ -7,10 +7,10 @@ import (
 	"github.com/Bagussurya12/discuss-forum/source/model/memberships"
 )
 
-func (r *repository) GetUser(ctx context.Context, email, username, phone_number string) (*memberships.UserModel, error) {
-	q := `SELECT id, email, password, username, phone_number, created_at, updated_at, created_by, updated_by FROM users WHERE email = ? OR username = ?`
+func (r *repository) GetUser(ctx context.Context, email, username, phone_number string, userID int64) (*memberships.UserModel, error) {
+	q := `SELECT id, email, password, username, phone_number, created_at, updated_at, created_by, updated_by FROM users WHERE email = ? OR username = ? OR user_id = ?`
 
-	row := r.db.QueryRowContext(ctx, q, email, username)
+	row := r.db.QueryRowContext(ctx, q, email, username, userID)
 
 	var response memberships.UserModel
 	err := row.Scan(&response.ID, &response.Email, &response.Password, &response.Username, &response.PhoneNumber, &response.CreatedAt, &response.UpdatedAt, &response.CreatedBy, &response.UpdatedBy)

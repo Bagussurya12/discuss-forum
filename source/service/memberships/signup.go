@@ -12,13 +12,13 @@ import (
 
 func (s *service) SignUp(ctx context.Context, req memberships.SignUpRequest) error {
 
-	user, err := s.membershipRepo.GetUser(ctx, req.Email, req.Username, req.PhoneNumber)
+	user, err := s.membershipRepo.GetUser(ctx, req.Email, req.Username, req.PhoneNumber, 0)
 	if err != nil && !errors.Is(err, sql.ErrNoRows) {
 		return err
 	}
 
 	if user != nil {
-		return errors.New("Username OR Email Already Exist")
+		return errors.New("username or email already exist")
 	}
 
 	pass, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
